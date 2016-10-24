@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://kukuruku.co/hub/cpp/randomized-binary-search-trees -->
+<html class="" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randomized Binary Search Trees</title>
+<meta name="description" content="I have always been surprised by the contrast between the grace of the main concept of binary search trees and">
+<meta name="robots" content="noodb">
+<meta name="robots" content="noyaca">
+<link rel="stylesheet" type="text/css" href="./Randomized Binary Search Trees_files/A.9fd7432e2418fb6d9e23f00f31c5936d.css.pagespeed.cf.rbecl3mkE1.css">
+<link href="./Randomized Binary Search Trees_files/css" rel="stylesheet" type="text/css">
+<link href="http://kukuruku.co/templates/skin/kukuruku/images/favicon.ico" rel="shortcut icon">
+<link rel="apple-touch-icon" sizes="57x57" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-57x57.png.pagespeed.ic.bmlycyn3-4.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-114x114.png.pagespeed.ic.LUV8YYPA1L.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-72x72.png.pagespeed.ic.KMP4Gt2vQB.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-144x144.png.pagespeed.ic.6SKIlkxYn1.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-60x60.png.pagespeed.ic.SYpIt3BPBU.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-120x120.png.pagespeed.ic.A3B_k4dsUJ.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-76x76.png.pagespeed.ic.SjCHJLkuFu.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xapple-touch-icon-152x152.png.pagespeed.ic.XzhSBlqnSl.png">
+<link rel="icon" type="image/png" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xfavicon-196x196.png.pagespeed.ic.o0JC9tGeTI.png" sizes="196x196">
+<link rel="icon" type="image/png" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xfavicon-160x160.png.pagespeed.ic.faWJVUlV5c.png" sizes="160x160">
+<link rel="icon" type="image/png" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xfavicon-96x96.png.pagespeed.ic.diwWkaUe73.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xfavicon-16x16.png.pagespeed.ic.zAVy1hh6x6.png" sizes="16x16">
+<link rel="icon" type="image/png" href="http://kukuruku.co/templates/skin/kukuruku/images/favicons/xfavicon-32x32.png.pagespeed.ic.5KMDTDfwN3.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="http://kukuruku.co/templates/skin/kukuruku/images/favicons/mstile-144x144.png">
+<link rel="search" type="application/opensearchdescription+xml" href="http://kukuruku.co/search/opensearch/" title="Kukuruku / Technology Hub">
+<link rel="alternate" type="application/rss+xml" href="http://kukuruku.co/rss/comments/92/" title="Randomized Binary Search Trees">
+<link rel="canonical" href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees">
+<!--googleoff: all-->
+<script src="./Randomized Binary Search Trees_files/cb=gapi.loaded_1" async=""></script><script src="./Randomized Binary Search Trees_files/cb=gapi.loaded_0" async=""></script><script src="./Randomized Binary Search Trees_files/ca-pub-5957750206575747.js"></script><script id="twitter-wjs" src="./Randomized Binary Search Trees_files/widgets.js"></script><script type="text/javascript" async="" src="./Randomized Binary Search Trees_files/platform.js" gapi_processed="true"></script><script id="facebook-jssdk" src="./Randomized Binary Search Trees_files/sdk.js"></script><script async="" src="./Randomized Binary Search Trees_files/analytics.js"></script><script>//<![CDATA[
+var DIR_WEB_ROOT='http://kukuruku.co';var DIR_STATIC_SKIN='http://kukuruku.co/templates/skin/kukuruku';var DIR_ROOT_ENGINE_LIB='http://kukuruku.co/engine/lib';var LIVESTREET_SECURITY_KEY='5e5ec636d01b057903f504b90e0d8c23';var SESSION_ID='eufj0jscublepo8eherf6etrg6';var BLOG_USE_TINYMCE='';var TINYMCE_LANG='en';var aRouter=new Array();aRouter['error']='http://kukuruku.co/error/';aRouter['registration']='http://kukuruku.co/registration/';aRouter['profile']='http://kukuruku.co/profile/';aRouter['my']='http://kukuruku.co/my/';aRouter['blog']='http://kukuruku.co/hub/';aRouter['personal_blog']='http://kukuruku.co/personal_blog/';aRouter['index']='http://kukuruku.co/index/';aRouter['topic']='http://kukuruku.co/topic/';aRouter['login']='http://kukuruku.co/login/';aRouter['people']='http://kukuruku.co/people/';aRouter['settings']='http://kukuruku.co/settings/';aRouter['tag']='http://kukuruku.co/tag/';aRouter['talk']='http://kukuruku.co/talk/';aRouter['comments']='http://kukuruku.co/comments/';aRouter['rss']='http://kukuruku.co/rss/';aRouter['link']='http://kukuruku.co/link/';aRouter['question']='http://kukuruku.co/question/';aRouter['blogs']='http://kukuruku.co/hubs/';aRouter['search']='http://kukuruku.co/search/';aRouter['admin']='http://kukuruku.co/admin/';aRouter['ajax']='http://kukuruku.co/ajax/';aRouter['feed']='http://kukuruku.co/feed/';aRouter['stream']='http://kukuruku.co/stream/';aRouter['photoset']='http://kukuruku.co/photoset/';aRouter['subscribe']='http://kukuruku.co/subscribe/';aRouter['org']='http://kukuruku.co/org/';aRouter['newsletters']='http://kukuruku.co/newsletters/';aRouter['language']='http://kukuruku.co/language/';aRouter['openid_login']='http://kukuruku.co/openid_login/';aRouter['openid_settings']='http://kukuruku.co/openid_settings/';aRouter['besttopicsflow']='http://kukuruku.co/besttopicsflow/';aRouter['company']='http://kukuruku.co/company/';aRouter['companies']='http://kukuruku.co/companies/';aRouter['mainpreview']='http://kukuruku.co/mainpreview/';aRouter['page']='http://kukuruku.co/page/';aRouter['premoderation']='http://kukuruku.co/premoderation/';aRouter['sitemap']='http://kukuruku.co/sitemap/';
+//]]></script>
+<!--googleon: all-->
+<script>var tinyMCE=false;</script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-49490146-1','kukuruku.co');ga('require','displayfeatures');ga('send','pageview');</script>
+<meta property="fb:app_id" content="1446177405629271">
+<meta property="og:site_name" content="Kukuruku Hub">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://kukuruku.co/uploads/topics/preview/00/00/00/92/14494d8ad5.png">
+<meta property="og:url" content="http://kukuruku.co/hub/cpp/randomized-binary-search-trees">
+<meta property="og:title" content="Randomized Binary Search Trees">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kukurukuco">
+<meta name="twitter:creator" content="@kukurukuco">
+<meta name="twitter:url" content="http://kukuruku.co/hub/cpp/randomized-binary-search-trees">
+<meta name="twitter:domain" content="kukuruku.co">
+<meta name="twitter:title" content="Randomized Binary Search Trees">
+<meta name="twitter:description" content="I have always been surprised by the contrast between the grace of the main concept of binary search trees and implementation complexity of balanced Binary Search Trees (Red-Black Trees, AVL Trees and Treaps). I have recently looked through the “Algorithms” by Robert Sedgewick [1] and found a description of randomized search trees (I’ve also found the original [2]). It is just one third of a page long (nodes insertion, and one more page for deletion). There’s also a nice implementation of the operation on deleting nodes from a search tree. Here we&#39;ll talk about randomized search trees, their implementation in C++ and also results of a small author’s research as for these trees balance. Let’s Go Step by Step Since I am going to describe a complete implementation of a tree, we’ll have to start from the very beginning (professionals can skip several paragraphs). Each node of a binary tree will contain key key that manages all the processes, and a pair of pointers: left and right to the left and the right subtrees. If any pointer is NULL, the corresponding tree is empty, i.e. it’s simply missing. Besides, we are also going to need one more size field that">
+<meta name="twitter:image" content="http://kukuruku.co/uploads/topics/preview/00/00/00/92/14494d8ad5.png">
+<script>var LS_ROUTER_ACTION='blog';var LS_ROUTER_EVENT='cpp';</script>
+<script src="./Randomized Binary Search Trees_files/secureAnonymousFramework"></script><style type="text/css">* html #li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link{height:1% !important;}#li_ui_li_gen_1477324076447_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1477324076447_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link:link, #li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link:visited, #li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link:hover, #li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1477324076447_0 a#li_ui_li_gen_1477324076447_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title, #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title{}.IN-shadowed #li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title{}.IN-shadowed #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title, .IN-shadowed #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title{}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text, #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title-text, #li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;}#li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title-text, #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title-text, #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title-text *, #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;}#li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title #li_ui_li_gen_1477324076447_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text, .success #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1477324076447_0 #li_ui_li_gen_1477324076447_0-title{}.success #li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title-text, .success #li_ui_li_gen_1477324076447_0.hovered #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title, .success #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title-text, .success #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title-text, .success #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title-text *, .success #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1477324076447_0.clicked #li_ui_li_gen_1477324076447_0-title, .IN-shadowed .success #li_ui_li_gen_1477324076447_0.down #li_ui_li_gen_1477324076447_0-title{}#li_ui_li_gen_1477324076464_1-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1477324076464_1.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1477324076464_1-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1477324076464_1-container.IN-empty #li_ui_li_gen_1477324076464_1-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1477324076464_1-container.IN-empty #li_ui_li_gen_1477324076464_1-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1477324076464_1-container.IN-hidden #li_ui_li_gen_1477324076464_1 {display:none !important;}</style><script src="./Randomized Binary Search Trees_files/embed.js" data-timestamp="1477324076521"></script><script type="text/javascript" charset="utf-8" async="" src="./Randomized Binary Search Trees_files/button.4e56ff84e57afaf5af2506ef73ab8a88.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body class=" ls-user-role-guest logged-out ls-user-role-not-admin bpage action-blog event-cpp"><noscript>&lt;meta HTTP-EQUIV="refresh" content="0;url='http://kukuruku.co/hub/cpp/randomized-binary-search-trees?ModPagespeed=noscript'" /&gt;&lt;style&gt;&lt;!--table,div,span,font,p{display:none} --&gt;&lt;/style&gt;&lt;div style="display:block"&gt;Please click &lt;a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees?ModPagespeed=noscript"&gt;here&lt;/a&gt; if you are not redirected within a few seconds.&lt;/div&gt;</noscript>
+<nav class="knav navbar navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+☰
+</button>
+<a class="navbar-brand" rel="home" href="http://kukuruku.co/"><script pagespeed_no_defer="">//<![CDATA[
+(function(){var d=window,e=document,f="documentElement",g="scrollTop",k="prototype",l="body",m="getAttribute",n="",p="1",q="data",r="img",s="load",t="number",u="on",v="onload",w="pagespeed_lazy_position",x="pagespeed_lazy_replaced_functions",y="pagespeed_lazy_src",z="position",A="relative",B="resize",C="scroll",D="src";d.pagespeed=d.pagespeed||{};var E=d.pagespeed,F=function(a){this.d=[];this.a=0;this.b=!1;this.o=a;this.e=null;this.i=0;this.j=200;this.c=!1};
+F[k].s=function(){var a=0;typeof d.pageYOffset==t?a=d.pageYOffset:e[l]&&e[l][g]?a=e[l][g]:e[f]&&e[f][g]&&(a=e[f][g]);var b=d.innerHeight||e[f].clientHeight||e[l].clientHeight;return{top:a,bottom:a+b,height:b}};F[k].n=function(a){var b=a[m](w);if(b)return parseInt(b,0);var b=a.offsetTop,c=a.offsetParent;c&&(b+=this.n(c));b=Math.max(b,0);a.setAttribute(w,b);return b};F[k].r=function(a){var b=this.n(a);return{top:b,bottom:b+a.offsetHeight}};
+F[k].q=function(a,b){if(a.currentStyle)return a.currentStyle[b];if(e.defaultView&&e.defaultView.getComputedStyle){var c=e.defaultView.getComputedStyle(a,null);if(c)return c.getPropertyValue(b)}return a.style&&a.style[b]?a.style[b]:n};F[k].p=function(a){if(!this.c&&(0==a.offsetHeight||0==a.offsetWidth))return!1;if(this.q(a,z)==A)return!0;var b=this.s(),c=a.getBoundingClientRect();c?(a=c.top-b.height,b=c.bottom):(c=this.r(a),a=c.top-b.bottom,b=c.bottom-b.top);return a<=this.a&&0<=b+this.a};
+F[k].m=function(a){this.l(a);var b=this;d.setTimeout(function(){var c=a[m](y);if(null!=c)if((b.b||b.p(a))&&-1!=a.src.indexOf(b.o)){var h=a.parentNode,G=a.nextSibling;h&&h.removeChild(a);a.getAttribute=a.k;a.removeAttribute(v);a.removeAttribute(y);a.removeAttribute(x);h&&h.insertBefore(a,G);a.src=c}else b.d.push(a)},0)};F[k].loadIfVisible=F[k].m;F[k].u=function(){this.b=!0;this.f()};F[k].loadAllImages=F[k].u;F[k].f=function(){var a=this.d,b=a.length;this.d=[];for(var c=0;c<b;++c)this.m(a[c])};
+F[k].h=function(a,b){return a.a?null!=a.a(b):null!=a[m](b)};F[k].v=function(){for(var a=e.getElementsByTagName(r),b=0;b<a.length;++b){var c=a[b];this.h(c,y)&&this.l(c)}};F[k].overrideAttributeFunctions=F[k].v;F[k].l=function(a){var b=this;this.h(a,x)||(a.k=a[m],a.getAttribute=function(a){a.toLowerCase()==D&&b.h(this,y)&&(a=y);return this.k(a)},a.setAttribute(x,p))};
+E.g=function(a,b,c){if(a.addEventListener)a.addEventListener(b,c,!1);else if(a.attachEvent)a.attachEvent(u+b,c);else{var h=a[u+b];a[u+b]=function(){c.call(this);h&&h.call(this)}}};E.t=function(a,b){var c=new F(b);E.lazyLoadImages=c;E.g(d,s,function(){c.c=!0;c.b=a;c.a=200;c.f()});0!=b.indexOf(q)&&((new Image).src=b);var h=function(){if(!(c.c&&a||c.e)){var b=c.j;(new Date).getTime()-c.i>c.j&&(b=0);c.e=d.setTimeout(function(){c.i=(new Date).getTime();c.f();c.e=null},b)}};E.g(d,C,h);E.g(d,B,h)};
+E.lazyLoadInit=E.t;})();
+
+pagespeed.lazyLoadInit(false, "/mod_pagespeed_static/1.JiBnMqyl6S.gif");
+
+//]]></script><img width="25" height="25" pagespeed_url_hash="655417839" src="./Randomized Binary Search Trees_files/25x25xlogo_25x25_orange.png.pagespeed.ic.8yzzW0yWS6.png"></a>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav navbar-menu">
+<li><a href="http://kukuruku.co/" class="nav-link home">Home</a></li>
+<li><a href="http://kukuruku.co/hubs/" class="nav-link hubs">Hubs</a></li>
+</ul>
+<ul class="nav navbar-nav user-actions navbar-right">
+<li>
+<a href="https://twitter.com/kukurukuco" target="_blank" class="nav-link twitter" title="Follow Us on Twitter"><i class="icon-twitter"></i></a>
+</li>
+<li>
+<a href="https://www.facebook.com/kukurukuco" target="_blank" class="nav-link facebook" title="Follow Us on Facebook"><i class="icon-facebook"></i></a>
+</li>
+<li>
+<button class="navbar-btn btn-link newsletters" title="Email Subscriptions"><i class="icon-envelope"></i></button>
+</li>
+<li>
+<a href="http://kukuruku.co/rss/index/" class="nav-link rss" alt="RSS Feed" title="RSS Feed"><i class="icon-rss"></i></a>
+</li>
+<li><button type="button" class="btn btn-success navbar-btn js-login-form-show kbtn signin"><i class="icon-user"></i>Write for us / Sign in</button></li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div>
+</nav>
+<article class="topic topic-type-topic js-topic published" itemscope="" itemtype="http://schema.org/Article">
+<div class="no-cover">
+<div class="cover-row">
+<div class="cover-content">
+<header role="banner" class="topic-header col-lg-6 col-md-9 center-block">
+<h1 class="topic-title" itemprop="name headline">Randomized Binary Search Trees
+</h1>
+<h5 class="author">
+<span class="by">Written by</span>
+<span class="name">Nikolai Ershov</span>
+|
+<time datetime="2014-08-21T23:01:09-04:00" title="21 August 2014" itemprop="datePublished">
+21 August 2014
+</time>
+|
+<a href="http://habrahabr.ru/post/145388/" class="source" target="_blank">Original Source</a>
+</h5>
+<div class="ad-block">
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script async="" src="./Randomized Binary Search Trees_files/adsbygoogle.js"></script>
+<!-- Article Header Responsive -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-5957750206575747" data-ad-slot="5852533318" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><iframe width="620" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Randomized Binary Search Trees_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</header>
+</div>
+</div>
+</div>
+<!-- /article header section -->
+<div class="col-sm-6 center-block social-share-block" style="height: 70px;">
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Randomized Binary Search Trees_files/fTmIQU3LxvB.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Randomized Binary Search Trees_files/fTmIQU3LxvB(1).html" style="border: none;"></iframe></div></div></div>
+<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1446177405629271&version=v2.0";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));</script>
+<ul class="list-inline text-center" style="position: static; left: auto; width: auto; top: 70px;">
+<li class="google">
+<!-- Place this tag where you want the share button to render. -->
+<div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 56px; height: 60px;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 56px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1477324076592" name="I0_1477324076592" src="./Randomized Binary Search Trees_files/sharebutton.html" data-gapiattached="true" title="+ 分享"></iframe></div>
+<!-- Place this tag after the last share tag. -->
+<script>(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/platform.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>
+</li>
+<li class="linkedin">
+<script src="./Randomized Binary Search Trees_files/in.js">
+              lang: en_US
+            </script>
+<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1477324076464_1-container" class="IN-top"><span id="li_ui_li_gen_1477324076464_1" class="IN-top"><span id="li_ui_li_gen_1477324076464_1-inner" class="IN-top"><span id="li_ui_li_gen_1477324076464_1-content" class="IN-top">6</span></span></span></span></span><br><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1477324076447_0"><a id="li_ui_li_gen_1477324076447_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1477324076447_0-logo">in</span><span id="li_ui_li_gen_1477324076447_0-title"><span id="li_ui_li_gen_1477324076447_0-mark"></span><span id="li_ui_li_gen_1477324076447_0-title-text">Share</span></span></a></span></span></span><script type="IN/Share+init" data-url="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" data-counter="top"></script>
+</li>
+<li class="facebook">
+<div class="fb-like fb_iframe_widget" data-href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=1446177405629271&amp;container_width=0&amp;href=http%3A%2F%2Fkukuruku.co%2Fhub%2Fcpp%2Frandomized-binary-search-trees&amp;layout=box_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=true"><span style="vertical-align: bottom; width: 52px; height: 61px;"><iframe name="f1311641c729a54" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Randomized Binary Search Trees_files/like.html" style="border: none; visibility: visible; width: 52px; height: 61px;" class=""></iframe></span></div>
+</li>
+<li class="twitter">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Randomized Binary Search Trees_files/tweet_button.39f7ee9fffbd122b7a37a520dbdaebc6.en.html" style="position: static; visibility: visible; width: 64px; height: 20px;"></iframe>
+<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>
+</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-1 topic-col-left"></div>
+<div class="topic-content text col-lg-6 col-md-9" itemprop="articleBody">
+<p>I have always been surprised by the contrast between the grace of the main concept of binary search trees and implementation complexity of balanced Binary Search Trees (<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" rel="nofollow">Red-Black Trees</a>, <a href="https://en.wikipedia.org/wiki/AVL_tree" rel="nofollow">AVL Trees</a> and Treaps). I have recently looked through the “Algorithms” by Robert Sedgewick [1] and found a description of randomized search trees (I’ve also found the original [2]). It is just one third of a page long (nodes insertion, and one more page for deletion). There’s also a nice implementation of the operation on deleting nodes from a search tree. Here we'll talk about randomized search trees, their implementation in C++ and also results of a small author’s research as for these trees balance. </p><h2>Let’s Go Step by Step </h2><p>Since I am going to describe a complete implementation of a tree, we’ll have to start from the very beginning (professionals can skip several paragraphs). Each node of a binary tree will contain key <i>key</i> that manages all the processes, and a pair of pointers: <i>left</i> and <i>right</i> to the left and the right subtrees. If any pointer is <i>NULL</i>, the corresponding tree is empty, i.e. it’s simply missing. Besides, we are also going to need one more <i>size</i> field that will store the size of the tree with the root in the given node. We will represent the nodes with the help of the following structures: </p><pre class="prettyprint"><code><span class="kwd">struct</span><span class="pln"> node </span><span class="com">// a structure for the tree nodes representation </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> key</span><span class="pun">;</span><span class="pln"> &nbsp;<br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> size</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; node</span><span class="pun">*</span><span class="pln"> left</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; node</span><span class="pun">*</span><span class="pln"> right</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; node</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> key </span><span class="pun">=</span><span class="pln"> k</span><span class="pun">;</span><span class="pln"> left </span><span class="pun">=</span><span class="pln"> right </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> size </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> <br></span><span class="pun">};</span></code></pre><p><img title="AVL Tree" align="right" alt="AVL Tree" pagespeed_url_hash="563385355" src="./Randomized Binary Search Trees_files/d91f0d16f8.png"></p><p>The major feature of a binary tree is that any key is less than the root key in the left subtree and more than the root key in the right subtree. For clarity, we will consider that all keys are different. This feature (it’s shown in the picture on the right) allows us to organize the given key search easily, moving from the root either to the right, or to the left depending on the root key value. A recursive variant of the search function (we will review them only) looks like the following: </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> find</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="com">// k key search in p tree</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="com">// there’s no need to search in the empty tree </span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> k </span><span class="pun">==</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> k </span><span class="pun">&lt;</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> find</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> find</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><p>Let’s move on to inserting new keys in the tree. In the classic case, insertion repeats the search with one difference: when facing an empty pointer, we create a new node and «hook» it to the place, in which the dead end has been found. At first, I did not want to describe this function, as in the randomized case it operates a bit differently, but then I changed my mind. Anyway, let’s take a look at the following things: </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="com">// a classic insertion of a new node with k key in p tree</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> node</span><span class="pun">(</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">key</span><span class="pun">&gt;</span><span class="pln">k </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><p>First of all, any function modifying the given tree, returns the pointer to a new root (it does not matter, if it changed or not). Then the called function decides where to hook the tree. Secondly, since we have to store the tree size, when changing any of the subtrees, we should update the tree size itself. The following functions will be in charge of it: </p><pre class="prettyprint"><code><span class="kwd">int</span><span class="pln"> getsize</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">)</span><span class="pln"> </span><span class="com">// a wrapper for size field. It operates with empty trees (t=NULL)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">void</span><span class="pln"> fixsize</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">)</span><span class="pln"> </span><span class="com">//setting up a proper size of the tree </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">size </span><span class="pun">=</span><span class="pln"> getsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">)+</span><span class="pln">getsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">)+</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><p><img title="Singly-list list" align="right" alt="Singly-list list" pagespeed_url_hash="4043118576" src="./Randomized Binary Search Trees_files/9b159274b1.png"></p><p>So what's wrong with the <b>insert</b> function? The thing is that this function does not guarantee the balance of the resulting tree. For example, if the keys are supplied in ascending order, the tree will result in a singly linked list (see the picture) with all related facilities. The major one is <i>linear</i> execution time of all operations on such tree. Meanwhile, this time is logarithmic for balanced trees. There are different ways to avoid imbalance. We can divide them into two classes: those guarantying balance (red-black trees, AVL trees) and those providing it in probability sense (treaps). In this case, probability to get an imbalance tree is negligible when a tree is big. I guess it’s no surprise that randomized trees belong to the second class. </p><p><script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script async="" src="./Randomized Binary Search Trees_files/adsbygoogle.js"></script>
+<!-- Article Body Responsive Ad -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-5957750206575747" data-ad-slot="1739444513" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><iframe width="620" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Randomized Binary Search Trees_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</p><h2>Inserting in a Tree Root </h2><p>Application of a special insertion of a new key is the essential component of randomization. As a result of insertion, the new key is in the tree root. This information is useful in many ways, as the access to recently added keys is really fast, hello to <a href="http://en.wikipedia.org/wiki/Self-organizing_list" rel="nofollow">self-organizing lists</a>. To carry out the insertion in the root, we are going to need the rotate function that performs a local transformation of the tree. </p><p><img title="Tree" alt="Tree" pagespeed_url_hash="898422802" src="./Randomized Binary Search Trees_files/972770.png"></p><p>Do not forget to update the size of subtrees and return a new tree root. </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> rotateright</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">)</span><span class="pln"> </span><span class="com">// right rotation round p node </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; node</span><span class="pun">*</span><span class="pln"> q </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">q </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> q</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; q</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; q</span><span class="pun">-&gt;</span><span class="pln">size </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> rotateleft</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> q</span><span class="pun">)</span><span class="pln"> </span><span class="com">// left rotation round q node </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; node</span><span class="pun">*</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> q</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; q</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">size </span><span class="pun">=</span><span class="pln"> q</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">q</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span></code></pre><p>Now, let’s perform the insertion in the root. First of all, insert recursively a new key in the root of the left or the right subtrees (depending on the result of comparing with the root key) and perform a right (left) rotation that raises the necessary node to the tree root. </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> insertroot</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="com">// inserting a new node with k key in p tree</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> node</span><span class="pun">(</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> k</span><span class="pun">&lt;</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> insertroot</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> rotateright</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> insertroot</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> rotateleft</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></code></pre><p><img title="Tree" alt="Tree" pagespeed_url_hash="652566001" src="./Randomized Binary Search Trees_files/cd60bbfd42.png"></p><h2>Randomized Insertion</h2><p>We have finally made it to randomization. At the moment, we have two insertion functions – a simple one and the one in the root. Let’s make a randomized insertion from them. It is known that if we mix all the keys beforehand and build a tree from them (the keys are inserted according to a standard scheme in order that has been achieved after hashing), the built tree will be quite balanced (its height will be around&nbsp;2log2n&nbsp;compared to log2n for&nbsp;a perfectly balanced tree). Please note, that in this case any of source keys can be a root. But what should we do, if we do not know beforehand, what keys we will have (for instance, they’re introduced into system during a tree usage). But all of that is actually simple. Since any key (including the one we will insert in the tree now) can be a root with 1/(n+1) probability (n is the tree size before insertion), we execute the insertion with the given probability and a recursive insertion in the right or the left subtree (depending on the key value in the root) with 1-1/(n+1) probability.</p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="com">// a randomized insertion of a new node with k key in p tree </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> node</span><span class="pun">(</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> rand</span><span class="pun">()%(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">+</span><span class="lit">1</span><span class="pun">)==</span><span class="lit">0</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> insertroot</span><span class="pun">(</span><span class="pln">p</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">key</span><span class="pun">&gt;</span><span class="pln">k </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> insert</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><p>That’s it! Let’s check, how all of that works. Below is the example of building a tree from 500 nodes (keys from 0 to 499 came to the input in ascending order):</p><p><img title="Randomized Tree" class="image-center" alt="Randomized Tree" pagespeed_url_hash="3921780691" src="./Randomized Binary Search Trees_files/58bc790dd7.png"></p><p>It’s not perfect, but it’s obviously not high. Let’s complicate the task. We will build a tree providing keys from 0 to 2^14-1 to the input (the prefect height is 14) and measure the height when building. </p><p><script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script async="" src="./Randomized Binary Search Trees_files/adsbygoogle.js"></script>
+<!-- Article Body Responsive Ad -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-5957750206575747" data-ad-slot="1739444513" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><iframe width="620" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./Randomized Binary Search Trees_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</p><p>For reliability, let’s make a thousand of runs and average the result. We’ll get the following chart that shows results. Our results are highlighted with the marker, while the theoretical estimate from [3] is highlighted with the full line: h=4.3ln(n)-1.9ln(ln(n))-4. The main thing we can understand from the chart is that the probability theory is a great thing! </p><p><img pagespeed_url_hash="2216972755" src="./Randomized Binary Search Trees_files/d8b817e9f7.png"></p><p>You should realize that the given chart reflects the average value of the tree height according to a great number of calculations. But how much can height differ in one specific calculation? The mentioned above article has a reply to this question as well. But we will just build a bar chart of heights distribution after the insertion of 4095 nodes. </p><p><img pagespeed_url_hash="1926460353" src="./Randomized Binary Search Trees_files/efd62e72b4.png"></p><p>Anyway, there’s no crime. Distribution tails are short – the maximum height is 39, which does not exceed the average value. </p><h2>Key Deletion</h2><p>So, we have an imbalanced (at least in some way) tree. As for now, it does not support key deletion. That’s exactly what we are going to solve now. The described in manuals variant operates fast, but does not really look nice (in contrast to insertion). We will follow a different path. Before deleting nodes, we will learn how to join trees together. Let there be given two trees with <i>p</i> and <i>q</i> roots. Any key of the first tree is less than any key of the second tree. It is required to join these two trees into a single one. We can accept any of two roots as the root of a new tree, let it be <i>p</i>. In this case, we can leave the left <i>p</i> subtree as it is and fix the join of two trees to <i>p</i> on the right – the right <i>p</i> subtree and the whole <i>q</i> tree (they meet all the requirements). </p><p><img pagespeed_url_hash="708426202" src="./Randomized Binary Search Trees_files/daaf082143.png"></p><p>On the other hand, we can just as well make <i>q</i> node the root of a new tree. In the randomized implementation, we choose between these two alternatives in a random manner. Assume that the size of the left tree is <i>n</i>, while the right tree size is <i>m</i>. Then <i>p</i> is chosen to be a new root with n/(n+m) and <i>q</i> is chosen with m/(n+m) probability. </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> node</span><span class="pun">*</span><span class="pln"> q</span><span class="pun">)</span><span class="pln"> </span><span class="com">// joining two trees</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">q </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> rand</span><span class="pun">()%(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">+</span><span class="pln">q</span><span class="pun">-&gt;</span><span class="pln">size</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">size </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">q</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; q</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">p</span><span class="pun">,</span><span class="pln">q</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; fixsize</span><span class="pun">(</span><span class="pln">q</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></code></pre><p><img align="right" pagespeed_url_hash="3870240258" src="./Randomized Binary Search Trees_files/490b23d28f.png"></p><p>Now everything is ready for deletion. We are going to delete by the key. Look for the node with the specified key (reminding you that all keys are different) and delete this node from the tree. The search stage is the same as searching. Then we join the right and the left subtrees of the found node, delete the node and return the root of the joined tree. </p><pre class="prettyprint"><code><span class="pln">node</span><span class="pun">*</span><span class="pln"> remove</span><span class="pun">(</span><span class="pln">node</span><span class="pun">*</span><span class="pln"> p</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">)</span><span class="pln"> </span><span class="com">// deleting from p tree the first found node with k key </span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">p </span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> p</span><span class="pun">-&gt;</span><span class="pln">key</span><span class="pun">==</span><span class="pln">k </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; node</span><span class="pun">*</span><span class="pln"> q </span><span class="pun">=</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">delete</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> q</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> k</span><span class="pun">&lt;</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">)</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">left </span><span class="pun">=</span><span class="pln"> remove</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">left</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">else</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; p</span><span class="pun">-&gt;</span><span class="pln">right </span><span class="pun">=</span><span class="pln"> remove</span><span class="pun">(</span><span class="pln">p</span><span class="pun">-&gt;</span><span class="pln">right</span><span class="pun">,</span><span class="pln">k</span><span class="pun">);</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"> <br></span><span class="pun">}</span></code></pre><p>Let’s check that deletion does not affect balance of the tree. Build a tree with 215 keys, then delete half of them (with values from 0 to 214-1) and look at heights distribution. </p><p><img title="Tree Chart" alt="Tree Chart" pagespeed_url_hash="2516405151" src="./Randomized Binary Search Trees_files/c7d1e5.png"></p><p>There’s almost no difference, which was to be proved… </p><h2>Instead of the Summary</h2><p>Implementation simplicity and beauty are the doubtless advantages of Binary Search Trees. But what’s the drawback? What do we pay for it? First of all, the additional memory for storing subtrees sizes. One integer-valued field per each node. As for Red-Black Trees, we can do without additional fields. On the other hand, the tree size information is not useless, since it allows to organize the access to the data by number (sampling or order statistics search), which transforms our tree into an ordered array with feasible insertion and deletion of any elements. Secondly, though the operation time is logarithmic, the proportionality coefficient will not be small as all the operations are performed in two passes (up and down). Besides, insertion and deletion require random numbers. But there’s also the good news. At the search stage everything should operate really fast. Finally, logarithmic time is not guaranteed. There’s always a chance that a tree will be ill-balanced. But when there are ten thousand of nodes, such possibility is so negligible that it’s worth risking. </p><p>Thank you for your attention!</p><h3>References</h3><ol><li>“Algorithms in C++”, Robert Sedgewick</li><li>Martinez, Conrado; Roura, Salvador (1998), <a href="http://www.akira.ruc.dk/~keld/teaching/algoritmedesign_f08/Artikler/03/Martinez97.pdf" rel="nofollow">Randomized binary search trees</a>, Journal of the ACM (ACM Press)</li><li>Reed, Bruce (2003), <a href="http://cgm.cs.mcgill.ca/~reedbook/papers/2003_R_1.pdf" rel="nofollow">The height of a random binary search tree</a>, Journal of the ACM 50 (3)</li></ol>
+</div>
+<aside class="col-lg-3 col-md-1 sidebar">
+<div class="block start-writing hidden-md hidden-sm hidden-xs text-center">
+<h3 class="title">WRITE FOR US</h3>
+<button type="button" class="btn btn-default js-login-form-show btn-become-author">Become an Author</button>
+</div>
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script src="./Randomized Binary Search Trees_files/adsbygoogle.js"></script>
+<div class="ad-block hidden-md hidden-sm hidden-xs text-center">
+<!-- 300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5957750206575747" data-ad-slot="4461810114" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./Randomized Binary Search Trees_files/saved_resource(3).html"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="floating-box" style="">
+<div class="block top-articles hidden-md hidden-sm hidden-xs">
+<h3 class="title text-center">READ NEXT</h3>
+<ul class="list-unstyled">
+<li>
+<a href="http://kukuruku.co/hub/funcprog/how-i-found-the-best-programming-language-in-the-world-part-1" class="article-title">How I Found the Best Programming Language in the World. Part 1</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/nix/capturing-packets-in-linux-at-a-speed-of-millions-of-packets-per-second-without-using-third-party-libraries" class="article-title">Capturing Packets in Linux at a Speed of Millions of Packets per Second without Using Third Party Libraries</a>
+</li>
+</ul>
+</div>
+<div class="ad-block hidden-md hidden-sm hidden-xs">
+<script>google_ad_client="ca-pub-5957750206575747";google_ad_slot="4872645719";google_ad_width=300;google_ad_height=250;</script>
+<!-- 300x250 ad unit -->
+<script src="./Randomized Binary Search Trees_files/show_ads.js"></script><ins id="aswift_4_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./Randomized Binary Search Trees_files/saved_resource(4).html"></iframe></ins></ins>
+</div>
+</div>
+</aside>
+<div class="clear"></div>
+<footer class="topic-footer col-lg-6 col-md-9 center-block">
+<ul class="topic-tags js-favourite-insert-after-form js-favourite-tags-topic-92 list-inline">
+<li><a rel="nofollow" class="tag" href="http://kukuruku.co/tag/binary%20tree/">#binary tree</a></li><li><a rel="nofollow" class="tag" href="http://kukuruku.co/tag/randomized%20trees/">#randomized trees</a></li><li><a rel="nofollow" class="tag" href="http://kukuruku.co/tag/c%2B%2B/">#c++</a></li> </ul>
+<ul class="list-unstyled list-inline topic-info">
+<li>
+<span class="view-count">
+<i class="icon-eye"></i>
+<span class="counter">18778</span>
+</span>
+</li>
+<li class="comments-count">
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#comments" title="Read comments" class="icon-comments icon-active">
+<span class="icon-comment"></span>
+<span class="total">2</span>
+</a>
+</li>
+<li class="social-share footer pull-right">
+<a href="https://news.ycombinator.com/submitlink?t=Randomized%20Binary%20Search%20Trees&amp;u=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="ycombinator" rel="nofollow">Y</a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://www.reddit.com/submit?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees&amp;title=Randomized%20Binary%20Search%20Trees" class="reddit" rel="nofollow"><i class="icon-reddit"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="https://plus.google.com/share?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="google-plus" rel="nofollow"><i class="icon-google-plus"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://www.facebook.com/sharer.php?s=100&amp;p[url]=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="facebook" rel="nofollow"><i class="icon-facebook"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://twitter.com/share?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees&amp;text=Randomized%20Binary%20Search%20Trees%20@KukurukuCo" class="twitter" rel="nofollow"><i class="icon-twitter"></i></a>
+</li>
+</ul>
+<div class="cards row">
+<section class="col-sm-6">
+<h6>Published by</h6>
+<div class="author">
+<div class="profile">
+<a href="http://kukuruku.co/profile/kukuruku/" class="profile-cover" style="background-image:url(http://kukuruku.co/uploads/images/00/00/01/2014/08/10/x3db732.jpg.pagespeed.ic.pTTwcP8J_k.jpg)">
+<span class="mask"></span>
+</a>
+<a href="http://kukuruku.co/profile/kukuruku/" alt="Kukuruku Hub" class="avatar"><img alt="Kukuruku Hub" class="img-circle" pagespeed_url_hash="81108594" src="./Randomized Binary Search Trees_files/xavatar_64x64.jpg,q185218.pagespeed.ic.ltJTCGN3dl.jpg"></a>
+<h4 class="name"><a rel="author" href="http://kukuruku.co/profile/kukuruku/">Kukuruku Hub</a></h4>
+</div>
+<div class="info">
+<span class="rating">
+RATING: <span class="value">15.51</span>
+</span>
+<button class="btn btn-success js-login-form-show pull-right">Follow</button>
+</div>
+</div>
+</section>
+<section class="col-sm-6">
+<h6>Published in</h6>
+<div class="hubs media">
+<div class="media-body">
+<h4 class="media-heading"><a href="http://kukuruku.co/hub/cpp/" class="card-hub" title="C++">C++</a></h4>
+C++ is a high-level programming language developed by Bjarne Stroustrup. But you know that, right?
+</div>
+</div>
+</section>
+</div>
+</footer>
+<div class="infobar clearfix">
+<div class="container">
+<div class="logo hidden-xs">
+<a rel="home" href="http://kukuruku.co/"><img alt="Kukuruku Hub" width="25" height="25" pagespeed_url_hash="655417839" src="./Randomized Binary Search Trees_files/25x25xlogo_25x25_orange.png.pagespeed.ic.8yzzW0yWS6.png"></a>
+</div>
+<ul class="list-inline">
+<li>
+<div id="vote_area_topic_92" class="vote
+                                                                                                                                                                                                                        vote-count-positive
+                                                                                                                                                                                                            
+                                                                    ">
+<div class="vote-up js-login-form-show"><i class="icon-arrow-up"></i></div>
+<div class="vote-count" id="vote_total_topic_92" title="All votes: 1">
+1
+</div>
+<div class="vote-down js-login-form-show"><i class="icon-arrow-down"></i></div>
+</div>
+</li>
+<li>
+<small class="written-by hidden-xs">&nbsp;Written by <span class="author_name">Nikolai Ershov</span></small>
+</li>
+<li class="hidden-xs">
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#comments" title="Read comments" class="icon-comments icon-active">
+<span class="icon-comment-2"></span>
+<span class="total">2</span>
+</a>
+</li>
+<li class="social-share footer pull-right">
+<a href="https://news.ycombinator.com/submitlink?t=Randomized%20Binary%20Search%20Trees&amp;u=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="ycombinator" rel="nofollow">Y</a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://www.reddit.com/submit?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees&amp;title=Randomized%20Binary%20Search%20Trees" class="reddit" rel="nofollow"><i class="icon-reddit"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="https://plus.google.com/share?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="google-plus" rel="nofollow"><i class="icon-google-plus"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://www.facebook.com/sharer.php?s=100&amp;p[url]=http://kukuruku.co/hub/cpp/randomized-binary-search-trees" class="facebook" rel="nofollow"><i class="icon-facebook"></i></a>
+</li>
+<li class="social-share footer pull-right">
+<a href="http://twitter.com/share?url=http://kukuruku.co/hub/cpp/randomized-binary-search-trees&amp;text=Randomized%20Binary%20Search%20Trees%20@KukurukuCo" class="twitter" rel="nofollow"><i class="icon-twitter"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</article> <!-- /.topic -->
+<section class="recommended-articles col-lg-6 col-md-9 center-block">
+<h3 class="title">RECOMMENDED</h3>
+<ul class="articles-list list-inline list-unstyled">
+<li>
+<a href="http://kukuruku.co/hub/algorithms/" class="hub">Algorithms</a>
+<a href="http://kukuruku.co/hub/algorithms/exact-maximum-clique-for-large-or-massive-real-graphs" class="article-image">
+<img width="100%" alt="Exact Maximum Clique for Large or Massive Real Graphs" pagespeed_url_hash="286135105" src="./Randomized Binary Search Trees_files/x2a6b0109d3_300crop.png.pagespeed.ic.EQ9_MqQYNV.jpg">
+</a>
+<a href="http://kukuruku.co/hub/algorithms/exact-maximum-clique-for-large-or-massive-real-graphs" class="article-title">Exact Maximum Clique for Large or Massive Real Graphs</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/algorithms/" class="hub">Algorithms</a>
+<a href="http://kukuruku.co/hub/algorithms/julia-set" class="article-image">
+<img width="100%" alt="Julia Set" pagespeed_url_hash="3440518246" src="./Randomized Binary Search Trees_files/x75322d5e5f_300crop.jpg.pagespeed.ic.hCdNFcpu3s.jpg">
+</a>
+<a href="http://kukuruku.co/hub/algorithms/julia-set" class="article-title">Julia Set</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/cpp/" class="hub">C++</a>
+<a href="http://kukuruku.co/hub/cpp/lock-free-data-structures-yet-another-treatise" class="article-image">
+<img width="100%" alt="Lock-Free Data Structures. Yet Another Treatise" pagespeed_url_hash="1943175152" src="./Randomized Binary Search Trees_files/244505c5b2_300crop.gif.pagespeed.ce.hA5-5Dlih9.gif">
+</a>
+<a href="http://kukuruku.co/hub/cpp/lock-free-data-structures-yet-another-treatise" class="article-title">Lock-Free Data Structures. Yet Another Treatise</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/gamedev/" class="hub">Game Development</a>
+<a href="http://kukuruku.co/hub/gamedev/how-i-built-my-first-android-game-and-realized-creativity-is-all-about-iterations" class="article-image">
+<img width="100%" alt="How I built my first Android Game and realized creativity is all about iterations" pagespeed_url_hash="998924770" src="./Randomized Binary Search Trees_files/x38bfa56575_300crop.png.pagespeed.ic.itOL63FXZb.jpg">
+</a>
+<a href="http://kukuruku.co/hub/gamedev/how-i-built-my-first-android-game-and-realized-creativity-is-all-about-iterations" class="article-title">How I built my first Android Game and realized creativity is all about iterations</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/diy/" class="hub">DIY</a>
+<a href="http://kukuruku.co/hub/diy/usb-killer" class="article-image">
+<img width="100%" alt="USB Killer" pagespeed_url_hash="1157079427" src="./Randomized Binary Search Trees_files/x24b34beff3_300crop.gif.pagespeed.ic.ZjVatI7uGH.png">
+</a>
+<a href="http://kukuruku.co/hub/diy/usb-killer" class="article-title">USB Killer</a>
+</li>
+<li>
+<a href="http://kukuruku.co/hub/programming/" class="hub">Programming</a>
+<a href="http://kukuruku.co/hub/programming/i-do-not-know-c" class="article-image">
+<img width="100%" alt="I Do Not Know C" pagespeed_url_hash="1448702942" src="./Randomized Binary Search Trees_files/x305ed27fb1_300crop.jpg.pagespeed.ic.2Cooa-WMwC.jpg">
+</a>
+<a href="http://kukuruku.co/hub/programming/i-do-not-know-c" class="article-title">I Do Not Know C</a>
+</li>
+</ul>
+</section>
+<section class="comments clearfix">
+<div id="disqus_thread" class="col-lg-6 col-md-9 center-block"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Randomized Binary Search Trees_files/saved_resource(5).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 619px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script>var disqus_config=function(){this.page.url='http://kukuruku.co/hub/cpp/randomized-binary-search-trees';this.page.identifier='randomized-binary-search-trees';};(function(){var d=document,s=d.createElement('script');s.src='//kukuruku.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script> <noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+</section>
+<section class="article-user-signup text-center">
+<h3 class="title text-center">Write your own articles at Kukuruku Hub</h3>
+<button class="js-login-form-show btn-become-author">Start writing now</button>
+</section>
+<section class="comments clearfix">
+<div class="col-lg-6 col-md-9 center-block" id="comments">
+<header class="comments-header">
+<h3><span id="count-comments">2</span> comments</h3>
+<a name="comments"></a>
+</header>
+<div class="comment-wrapper" id="comment_wrapper_id_73">
+<section id="comment_id_73" class="comment
+														
+														">
+<a name="comment73"></a>
+<a href="http://kukuruku.co/profile/abigagli/"><img pagespeed_lazy_src="http://kukuruku.co/uploads/images/00/02/12/2014/08/12/avatar_48x48.jpg?072435" alt="Andrea Bigagli" class="comment-avatar" pagespeed_url_hash="110855018" src="./Randomized Binary Search Trees_files/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisible(this);" pagespeed_lazy_replaced_functions="1"></a>
+<small>
+<ul class="list-unstyled comment-info">
+<li class="comment-author">
+<a href="http://kukuruku.co/profile/abigagli/">Andrea Bigagli</a>
+</li>
+<li class="comment-date">
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#comment73" title="Link to comment">
+<time datetime="2014-08-23T11:26:46-04:00">23 August 2014, 11:26 AM</time>
+</a>
+</li>
+<li class="goto-comment-child"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" title="Back to reply">↓</a></li>
+<li id="vote_area_comment_73" class="vote 
+																			    
+																		
+																			">
+<div class="vote-down js-login-form-show" onclick="return ls.vote.vote(73,this,-1,&#39;comment&#39;);"><span class="icon-arrow-down"></span></div>
+<span class="vote-count" id="vote_total_comment_73">&nbsp;&nbsp;</span>
+<div class="vote-up js-login-form-show" onclick="return ls.vote.vote(73,this,1,&#39;comment&#39;);"><span class="icon-arrow-up"></span></div>
+</li>
+</ul>
+</small>
+<div id="comment_content_id_73" class="comment-content text">
+Hey, great post, but<blockquote>The major feature of a binary tree is that any key is less than the root key in the left subtree and more than the root key in the right subtree</blockquote>Ehm, am I missing something or shouldn't it be exactly the other way around?
+</div>
+</section>
+</div>
+<div class="comment-wrapper" id="comment_wrapper_id_171">
+<section id="comment_id_171" class="comment
+														
+														">
+<a name="comment171"></a>
+<a href="http://kukuruku.co/profile/GittyGetty/"><img alt="GittyGetty" class="comment-avatar" pagespeed_url_hash="2541263271" src="./Randomized Binary Search Trees_files/avatar_48x48.png"></a>
+<small>
+<ul class="list-unstyled comment-info">
+<li class="comment-author">
+<a href="http://kukuruku.co/profile/GittyGetty/">GittyGetty</a>
+</li>
+<li class="comment-date">
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#comment171" title="Link to comment">
+<time datetime="2015-02-08T20:47:10-05:00">8 February 2015, 8:47 PM</time>
+</a>
+</li>
+<li class="goto-comment-child"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" title="Back to reply">↓</a></li>
+<li id="vote_area_comment_171" class="vote 
+																																							vote-count-positive
+																			    
+																		
+																			">
+<div class="vote-down js-login-form-show" onclick="return ls.vote.vote(171,this,-1,&#39;comment&#39;);"><span class="icon-arrow-down"></span></div>
+<span class="vote-count" id="vote_total_comment_171">+1</span>
+<div class="vote-up js-login-form-show" onclick="return ls.vote.vote(171,this,1,&#39;comment&#39;);"><span class="icon-arrow-up"></span></div>
+</li>
+</ul>
+</small>
+<div id="comment_content_id_171" class="comment-content text">
+I second the above: thanks for the article! Andrea, the quote you are citing means that all keys in the left sub-tree are smaller than the root's key and the ones in the right sub-tree larger. I think the sentence order chosen might be a little bit confusing, but it sounds like it matches what I have learned about search trees (not that this isn't arbitrary in the first place and would work just as well the other way around, too).
+</div>
+</section>
+</div>
+</div>
+<div class="col-lg-6 col-md-9 center-block">
+<div class="modal fade in modal-image-upload jqm-init" id="window_upload_img">
+<div class="modal-dialog">
+<div class="modal-content">
+<header class="modal-header">
+<button type="button" class="close jqmClose" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">Upload image</h4>
+</header>
+<div class="modal-body">
+<ul class="nav nav-tabs">
+<li class="active js-block-upload-img-item" data-type="pc"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#">From PC</a></li>
+<li class="js-block-upload-img-item" data-type="link"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#">From internet</a></li>
+</ul>
+<br>
+<form method="POST" action="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" enctype="multipart/form-data" id="block_upload_img_content_pc" onsubmit="return false;" class="tab-content js-block-upload-img-content" data-type="pc">
+<div class="form-group">
+<label for="img_file">File</label>
+<input type="file" name="img_file" id="img_file" value="">
+</div>
+<div class="form-group">
+<label for="form-image-align">Align</label>
+<select name="align" id="form-image-align" class="form-control">
+<option value="">No</option>
+<option value="left">Left</option>
+<option value="right">Right</option>
+<option value="center">Center</option>
+</select>
+</div>
+<div class="form-group">
+<label for="form-image-title">Title</label>
+<input type="text" name="title" id="form-image-title" value="" class="form-control">
+</div>
+<button type="submit" class="btn btn-success" onclick="ls.ajaxUploadImg(&#39;block_upload_img_content_pc&#39;,&#39;form_comment_text&#39;);">Submit</button>
+<button type="submit" class="btn btn-default jqmClose">Cancel</button>
+</form>
+<form method="POST" action="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" enctype="multipart/form-data" id="block_upload_img_content_link" onsubmit="return false;" style="display: none;" class="tab-content js-block-upload-img-content" data-type="link">
+<div class="form-group">
+<label for="img_file">Image URL</label>
+<input type="text" name="img_url" id="img_url" value="http://" class="form-control">
+</div>
+<div class="form-group">
+<label for="form-image-url-align">Align</label>
+<select name="align" id="form-image-url-align" class="form-control">
+<option value="">No</option>
+<option value="left">Left</option>
+<option value="right">Right</option>
+<option value="center">Center</option>
+</select>
+</div>
+<div class="form-group">
+<label for="form-image-url-title">Title</label>
+<input type="text" name="title" id="form-image-url-title" value="" class="form-control">
+</div>
+<button type="submit" class="btn btn-success" onclick="ls.topic.insertImageToEditor(jQuery(&#39;#img_url&#39;).val(),jQuery(&#39;#form-image-url-align&#39;).val(),jQuery(&#39;#form-image-url-title&#39;).val());">Insert as external link</button>
+or
+<button type="submit" class="btn btn-success" onclick="ls.ajaxUploadImg(&#39;block_upload_img_content_link&#39;,&#39;form_comment_text&#39;);">Upload</button>
+<button type="submit" class="btn btn-default jqmClose">Cancel</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script>var markitupEditor={lang:{"panel_b":"bold","panel_i":"italic","panel_u":"underline","panel_s":"strike through","panel_url":"type link","panel_url_promt":"Type link","panel_code":"code","panel_video":"video","panel_image":"image","panel_cut":"cut","panel_quote":"quote","panel_list":"List","panel_list_ul":"UL LI","panel_list_ol":"OL LI","panel_title":"Header","panel_clear_tags":"clean up the tags","panel_video_promt":"Enter a link to the video","panel_list_li":"list item","panel_image_promt":"Enter the link to an image","panel_user":"user inserted","panel_user_promt":"Enter the user login"}};</script>
+<div id="reply" class="reply">
+<form method="post" id="form_comment" onsubmit="return false;" enctype="multipart/form-data">
+<div><div id="markItUpForm_comment_text" class="markItUp"><div class="markItUpContainer"><div class="markItUpHeader"><ul><li class="markItUpButton markItUpButton1 editor-bold"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="B" title="bold [Ctrl+B]"><i class="icon-bold"></i></a></li><li class="markItUpButton markItUpButton2 editor-italic"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="I" title="italic [Ctrl+I]"><i class="icon-italic"></i></a></li><li class="markItUpButton markItUpButton3 editor-stroke"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="S" title="strike through [Ctrl+S]"><i class="icon-strikethrough"></i></a></li><li class="markItUpButton markItUpButton4 editor-underline"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="U" title="underline [Ctrl+U]"><i class="icon-underline"></i></a></li><li class="markItUpButton markItUpButton5 editor-quote"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="Q" title="quote [Ctrl+Q]"><i class="icon-quote-right"></i></a></li><li class="markItUpButton markItUpButton6 editor-code"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" title="code"><i class="icon-code"></i></a></li><li class="markItUpButton markItUpButton7 editor-picture"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="P" title="image [Ctrl+P]"><i class="icon-picture"></i></a></li><li class="markItUpButton markItUpButton8 editor-link"><a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees" accesskey="L" title="type link [Ctrl+L]"><i class="icon-link"></i></a></li></ul></div><textarea name="comment_text" id="form_comment_text" class="mce-editor markitup-editor form-control markItUpEditor" placeholder="Any thoughts?"></textarea><div class="markItUpFooter"><div class="markItUpResizeHandle"></div></div></div></div></div>
+<div class="pull-right">
+<button class="btn btn-default js-login-form-show btn-comment-preview">Preview</button>
+<button class="btn btn-success js-login-form-show btn-comment-send">Comment</button>
+</div>
+<input type="hidden" name="reply" value="0" id="form_comment_reply">
+<input type="hidden" name="cmt_target_id" value="92">
+</form>
+</div>
+</div>
+</section>
+<section class="read-more">
+<header class="text-center">
+<h3>Read Next</h3>
+</header>
+<ul class="list-inline item-list">
+<li title="In the previous article we’ve reviewed  Randomized Binary Search Trees . Today we are going to review the implementation of  AVL Trees . They must..." class="item col-sm-4 col-xs-12">
+<a href="http://kukuruku.co/hub/cpp/avl-trees">
+<div class="content">
+<div class="rm-cover" style="background-image:url(http://kukuruku.co/uploads/topics/preview/00/00/00/94/xb87cc46177.jpg.pagespeed.ic.gZy5ArvOSY.jpg)"></div>
+<div class="rm-overlay"></div>
+<div class="table-row">
+<div class="row-fluid">
+<div class="col-md-10 col-sm-8 col-xs-10 center-block">
+<span class="url">AVL Trees</span>
+</div>
+</div>
+</div>
+<div class="view-count">
+<span class="eye glyphicon glyphicon-eye-open"></span>
+<span>63726</span>
+</div>
+</div>
+</a>
+<div class="hub">
+<a href="http://kukuruku.co/hub/cpp/">C++</a>
+</div>
+</li>
+<li title="Having read some articles about  tries  (aka prefix trees aka radix trees), I decided to write one of my own. Today we are going to talk about a..." class="item col-sm-4 col-xs-12">
+<a href="http://kukuruku.co/hub/algorithms/radix-trees">
+<div class="content">
+<div class="rm-cover" style="background-image: url(http://kukuruku.co/uploads/topics/preview/00/00/00/96/1371190d2e.jpg)"></div>
+<div class="rm-overlay"></div>
+<div class="table-row">
+<div class="row-fluid">
+<div class="col-md-10 col-sm-8 col-xs-10 center-block">
+<span class="url">Radix Trees</span>
+</div>
+</div>
+</div>
+<div class="view-count">
+<span class="eye glyphicon glyphicon-eye-open"></span>
+<span>26995</span>
+</div>
+</div>
+</a>
+<div class="hub">
+<a href="http://kukuruku.co/hub/algorithms/">Algorithms</a>
+</div>
+</li>
+<li title="All the C++ and Rust examples in the article are not real. So use your imagination to estimate the scope of threat.  C++ programs have been..." class="item col-sm-4 col-xs-12">
+<a href="http://kukuruku.co/hub/rust/comparing-rust-and-cpp">
+<div class="content">
+<div class="rm-cover" style="background-image:url(http://kukuruku.co/uploads/topics/preview/00/00/01/10/x77fd406cdf.jpg.pagespeed.ic.J-BOcLYm7k.jpg)"></div>
+<div class="rm-overlay"></div>
+<div class="table-row">
+<div class="row-fluid">
+<div class="col-md-10 col-sm-8 col-xs-10 center-block">
+<span class="url">Comparing Rust and C++</span>
+</div>
+</div>
+</div>
+<div class="view-count">
+<span class="eye glyphicon glyphicon-eye-open"></span>
+<span>57802</span>
+</div>
+</div>
+</a>
+<div class="hub">
+<a href="http://kukuruku.co/hub/rust/">Rust</a>
+</div>
+</li>
+</ul>
+</section>
+<footer id="footer">
+<div class="col-sm-10 center-block text-right">
+<ul class="list-inline footer-list">
+<li><a href="http://kukuruku.co/page/about">About</a></li>
+<li><a href="http://kukuruku.co/page/rules">Rules</a></li>
+<li><a href="http://kukuruku.co/page/privacy">Privacy Policy</a></li>
+<li><a href="mailto:support@kukuruku.co">Contact us</a></li>
+<li>·</li>
+<li><a href="https://twitter.com/kukurukuco">Twitter</a></li>
+<li><a href="https://www.facebook.com/kukurukuco">Facebook</a></li>
+</ul>
+</div>
+</footer>
+<aside class="toolbar hidden-xs">
+<section class="toolbar-scrollup" id="toolbar_scrollup" style="display: none;">
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" onclick="return ls.toolbar.up.goUp();" title="Up" class="toolbar-topic-prev"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</section>
+</aside>
+<div class="modal fade" id="empty-modal" tabindex="-1" role="dialog"><div class="modal-dialog"><div class="modal-content"></div></div></div>
+<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+<div class="modal-dialog select-none">
+<div class="modal-content signin">
+<header class="modal-header">
+<button type="button" class="close jqmClose" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title" id="modal-title">Log In</h4>
+</header>
+<div class="modal-body">
+<form action="http://kukuruku.co/login/" method="post" class="form-horizontal form-signin" role="form">
+<small class="text-danger validate-error-hide validate-error-login"></small>
+<div class="input-group">
+<label for="signin-login" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></label>
+<input id="signin-login" type="text" class="form-control" name="login" value="" placeholder="Username / Email">
+</div>
+<div class="input-group">
+<label for="signin-password" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></label>
+<input id="signin-password" type="password" class="form-control" name="password" placeholder="Password">
+</div>
+<div class="input-group">
+<label for="remember-me" class="pull-left remember-me">
+<input type="checkbox" id="remember-me" name="remember" checked=""> Remember me
+</label>
+<a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" class="pull-right reset-password-link">Forgot password?</a>
+</div>
+<input type="hidden" name="return-path" value="http://kukuruku.co/hub/cpp/randomized-binary-search-trees">
+<button type="submit" name="submit_login" class="btn btn-success btn-block btn-signin">Log In</button>
+</form>
+﻿<div id="social-auth">
+<div class="or-block">
+<hr class="hr-or">
+<span class="span-or">or</span>
+</div>
+<ul class="networks">
+<li><a href="http://kukuruku.co/login/openid/github/" title="Sign in with Github" class="btn btn-lg btn-block btn-social btn-github"><i class="icon-github"></i>Sign in with Github</a></li>
+<li><a href="http://kukuruku.co/login/openid/twitter/?authorize=1" class="btn btn-lg btn-block btn-social btn-twitter" title="Sign in with Twitter"><i class="icon-twitter"></i>Sign in with Twitter</a></li>
+<li><button title="Sign in with Facebook" class="btn btn-lg btn-block btn-facebook btn-social"><i class="icon-facebook"></i>Sign in with Facebook</button></li>
+</ul>
+<div class="text-center np"><img width="12" height="14" pagespeed_url_hash="1219111664" src="./Randomized Binary Search Trees_files/lock.png.pagespeed.ce.QpfftFvLmY.png"> We'll never post to your Twitter, Facebook or Github account without your permission.</div>
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script>var socialAuth={facebook:{client_id:"1446177405629271",redirect_uri:'http://kukuruku.co/login/'+'openid/fb/',scope:"user_birthday,user_website,email,user_about_me"},twitter:{redirect_uri:'http://kukuruku.co/login/'+'openid/twitter/?authorize=1'}};</script>
+</div>
+</div>
+<div class="modal-footer text-right">
+<span>Don't have an account? <a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" class="link-signup">Sign up now</a></span>
+</div>
+</div><!-- /.modal-content signin -->
+<div class="modal-content signup">
+<header class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title" id="modal-title">Sign Up</h4>
+</header>
+<div class="modal-body">
+<form action="http://kukuruku.co/registration/" method="post" class="form-horizontal form-signup" role="form" autocomplete="off">
+<input style="display:none">
+<input type="password" style="display:none">
+<div class="input-group">
+<label for="signup-login" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></label>
+<input id="signup-login" type="text" class="form-control js-ajax-validate" name="login" value="" placeholder="Username" autocomplete="off">
+</div>
+<small class="text-danger validate-msg validate-error-hide validate-error-field-login"></small>
+<div class="input-group">
+<label for="signup-password" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></label>
+<input id="signup-password" type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+</div>
+<small class="text-danger validate-msg validate-error-hide validate-error-field-password"></small>
+<div class="input-group">
+<label for="signup-email" class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></label>
+<input id="signup-email" type="email" class="form-control" name="mail" placeholder="Email (optional)" autocomplete="off">
+</div>
+<small class="text-danger validate-msg validate-error-hide validate-error-field-mail"></small>
+<input type="hidden" name="return-path" value="http://kukuruku.co/hub/cpp/randomized-binary-search-trees">
+<button type="submit" name="submit_register" class="btn btn-success btn-block btn-signup">Create Account</button>
+</form>
+﻿<div id="social-auth">
+<div class="or-block">
+<hr class="hr-or">
+<span class="span-or">or</span>
+</div>
+<ul class="networks">
+<li><a href="http://kukuruku.co/login/openid/github/" title="Sign in with Github" class="btn btn-lg btn-block btn-social btn-github"><i class="icon-github"></i>Sign in with Github</a></li>
+<li><a href="http://kukuruku.co/login/openid/twitter/?authorize=1" class="btn btn-lg btn-block btn-social btn-twitter" title="Sign in with Twitter"><i class="icon-twitter"></i>Sign in with Twitter</a></li>
+<li><button title="Sign in with Facebook" class="btn btn-lg btn-block btn-facebook btn-social"><i class="icon-facebook"></i>Sign in with Facebook</button></li>
+</ul>
+<div class="text-center np"><img width="12" height="14" pagespeed_url_hash="1219111664" src="./Randomized Binary Search Trees_files/lock.png.pagespeed.ce.QpfftFvLmY.png"> We'll never post to your Twitter, Facebook or Github account without your permission.</div>
+<script type="text/javascript" pagespeed_no_defer="">pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script>var socialAuth={facebook:{client_id:"1446177405629271",redirect_uri:'http://kukuruku.co/login/'+'openid/fb/',scope:"user_birthday,user_website,email,user_about_me"},twitter:{redirect_uri:'http://kukuruku.co/login/'+'openid/twitter/?authorize=1'}};</script>
+</div>
+</div>
+<div class="modal-footer text-right">
+<span>Already have an account? <a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" class="link-signin">Log in here</a></span>
+</div>
+</div>
+<div class="modal-content reset-password">
+<header class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title" id="modal-title">Reset Password</h4>
+</header>
+<div class="modal-body">
+<p>Enter the email address associated with your account, and we'll email you a link to reset your password.</p>
+<form action="http://kukuruku.co/login/reminder/" method="POST" id="popup-reminder-form">
+<div class="input-group">
+<label for="popup-reminder-mail" class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></label>
+<input itype="text" name="mail" id="popup-reminder-mail" class="form-control" placeholder="Email">
+</div>
+<small class="text-danger validate-msg validate-error-hide validate-error-reminder"></small>
+<div class="form-group">
+<button type="submit" name="submit_reminder" class="btn btn-success btn-block" id="popup-reminder-form-submit">Send Reset Link</button>
+</div>
+</form>
+</div>
+<div class="modal-footer text-right">
+<span>Already have an account? <a href="http://kukuruku.co/hub/cpp/randomized-binary-search-trees#" class="link-signin">Log in here</a></span>
+</div>
+</div>
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="./Randomized Binary Search Trees_files/aeb7423f06aafea67ae49d676ed76aa6.js"></script>
+<!--[if lt IE 9]><script type='text/javascript' src='http://kukuruku.co/engine/lib/external/html5shiv.js'></script><![endif]-->
+<script>ls.lang.load({"blog_join":"Connect","blog_leave":"Disconnect"});ls.registry.set('comment_max_tree',7);ls.registry.set('block_stream_show_tip',true);</script>
+<script>//<![CDATA[
+(function(){var d=encodeURIComponent,f=window,g=document,h="documentElement",k="length",l="prototype",m="body",p="&",s="&ci=",t=",",u="?",v="Content-Type",w="Microsoft.XMLHTTP",x="Msxml2.XMLHTTP",y="POST",z="application/x-www-form-urlencoded",A="img",B="input",C="load",D="oh=",E="on",F="pagespeed_url_hash",G="url=";f.pagespeed=f.pagespeed||{};var H=f.pagespeed,I=function(a,b,c){this.c=a;this.e=b;this.d=c;this.b=this.f();this.a={}};I[l].f=function(){return{height:f.innerHeight||g[h].clientHeight||g[m].clientHeight,width:f.innerWidth||g[h].clientWidth||g[m].clientWidth}};I[l].g=function(a){a=a.getBoundingClientRect();return{top:a.top+(void 0!==f.pageYOffset?f.pageYOffset:(g[h]||g[m].parentNode||g[m]).scrollTop),left:a.left+(void 0!==f.pageXOffset?f.pageXOffset:(g[h]||g[m].parentNode||g[m]).scrollLeft)}};I[l].h=function(a){if(0>=a.offsetWidth&&0>=a.offsetHeight)return!1;a=this.g(a);var b=a.top.toString()+t+a.left.toString();if(this.a.hasOwnProperty(b))return!1;this.a[b]=!0;return a.top<=this.b.height&&a.left<=this.b.width};I[l].i=function(a){var b;if(f.XMLHttpRequest)b=new XMLHttpRequest;else if(f.ActiveXObject)try{b=new ActiveXObject(x)}catch(c){try{b=new ActiveXObject(w)}catch(e){}}if(!b)return!1;b.open(y,this.c+(-1==this.c.indexOf(u)?u:p)+G+d(this.e));b.setRequestHeader(v,z);b.send(a);return!0};I[l].k=function(){for(var a=[A,B],b=[],c={},e=0;e<a[k];++e)for(var q=g.getElementsByTagName(a[e]),n=0;n<q[k];++n){var r=q[n].getAttribute(F);r&&(q[n].getBoundingClientRect&&this.h(q[n]))&&!(r in c)&&(b.push(r),c[r]=!0)}if(0!=b[k]){a=D+this.d;a+=s+d(b[0]);for(e=1;e<b[k];++e){c=t+d(b[e]);if(131072<a[k]+c[k])break;a+=c}H.criticalImagesBeaconData=a;this.i(a)}};H.j=function(a,b,c){if(a.addEventListener)a.addEventListener(b,c,!1);else if(a.attachEvent)a.attachEvent(E+b,c);else{var e=a[E+b];a[E+b]=function(){c.call(this);e&&e.call(this)}}};H.l=function(a,b,c){var e=new I(a,b,c);H.j(f,C,function(){f.setTimeout(function(){e.k()},0)})};H.criticalImagesBeaconInit=H.l;})();pagespeed.criticalImagesBeaconInit('/mod_pagespeed_beacon','http://kukuruku.co/hub/cpp/randomized-binary-search-trees','wktEWvKVeN');
+//]]></script>
+
+<iframe name="oauth2relay411151862" id="oauth2relay411151862" src="./Randomized Binary Search Trees_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe style="display: none;" src="./Randomized Binary Search Trees_files/saved_resource(6).html"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./Randomized Binary Search Trees_files/saved_resource(7).html"></iframe></body></html>
